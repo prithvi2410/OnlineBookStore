@@ -1,0 +1,50 @@
+﻿@model Online_Book_Store.ViewModel.ShopViewModel
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_BookStoreLayout.cshtml";
+}
+<h3 style="margin:10px 20px 10px 60px;width:50vw">@ViewBag.Category Section</h3>
+<div class="row">
+    @foreach (var product in Model.Book)
+    {
+        <div class="content col-md-6">
+            <div class="image">
+                <img src="@Url.Content(product.ImagePath)" class="book-image">
+            </div>
+
+            <div class="description">
+                <h5>@product.Name</h5>
+                <p>By @product.Author</p>
+                <p>Category : @product.Category</p>
+                <p><strong>Rs. @product.Price</strong></p>
+
+                @if (product.Stock != 0)
+                {
+                    <div class="description-btn">
+                        @if (Model.InCartBookId.Contains(product.BookId))
+                        {
+                            <button type="button" class="addtocart-btn btn disabled">In Cart</button>
+                        }
+                        else
+                        {
+                            <form action="@Url.Action("BuyConfirmation", "Product")">
+                            <button type="submit" class="buy-btn btn " value="@product.BookId" name="bookId">Buy</button>
+                        </form>
+                            <form action="@Url.Action("AddToCart", "Product")">
+                                <input type="hidden" name="viewName" value="Category" />
+                                <input type="hidden" name="value" value="@ViewBag.Category" />
+                                <input type="hidden" name="bookId" value="@product.BookId" />
+                                <button type="submit" class="addtocart-btn btn">Add to cart</button>
+                            </form>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <p style="color:red">Currently out of stock</p>
+                }
+
+            </div>
+        </div>
+    }
+</div>

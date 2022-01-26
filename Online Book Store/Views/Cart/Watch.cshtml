@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Online_Book_Store.Models.CartItem>
+@{
+    ViewBag.Title = "Watch";
+    Layout = "~/Views/Shared/_BookStoreLayout.cshtml";
+}
+<h3 style="margin: 10px 0 10px 60px; width: 50vw">Your cart</h3>
+<div class="row">
+    @if(Model.Count() == 0 )
+    {
+        <h5 class="cart-empty">Your cart is empty! <a href="@Url.Action("Home", "Shop")" style="color: #1A3850">click here to shop books</a></h5>
+    }
+    else
+    {
+        foreach (var product in Model)
+        {
+            <div class="content col-md-6">
+                <div class="image">
+                    <img src="@Url.Content(product.Book.ImagePath)" class="book-image">
+                </div>
+
+                <div class="description">
+                    <h5>@product.Book.Name</h5>
+                    <p>By @product.Book.Author</p>
+                    <p>Category : @product.Book.Category</p>
+                    <p><strong>Rs. @product.Book.Price</strong></p>
+
+                    <div class="description-btn">
+                        <form action="@Url.Action("RemoveFromCart", "Cart")">
+                            <button type="submit" class="remove-btn btn btn-danger" value="@product.BookId" name="bookId">Remove</button>
+                        </form>
+                    </div>
+                    @if (product.Book.Stock == 0)
+                    {
+                        <p style="color:red">Currently out of stock</p>
+                    }
+
+                </div>
+            </div>
+        }
+        <div class="buycart-btn">
+            <form action=@Url.Action("Buy", "Cart")>
+                <button type="submit" class="buy-btn btn">Buy Cart</button>
+            </form>
+        </div>
+    }
+</div>
+

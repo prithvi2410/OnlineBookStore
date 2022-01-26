@@ -1,0 +1,170 @@
+﻿* {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.2vw;
+}
+
+body {
+    background-color: white;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+    a:hover {
+        color: #C88854;
+    }
+
+ul {
+    list-style-type: none;
+}
+
+em {
+    color: #C88854;
+}
+
+.navbar-one {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1A3850;
+    padding: 0 20px;
+    margin: 0;
+    height: 70px;
+}
+
+.navbar-logo {
+    border: 2px solid #C88854;
+    padding: 5px;
+    font-size: larger;
+}
+
+    .navbar-logo a {
+        color: white;
+        font-weight: bold;
+    }
+
+        .navbar-logo a:hover {
+            color: white;
+        }
+
+.search {
+    display: flex;
+}
+
+.search-text {
+    border: 0px;
+    padding: 0 10px;
+    width: 35vw;
+    height: 35px;
+    outline: none;
+}
+
+.search-btn {
+    height: 35px;
+    width: 4vw;
+    border: 0px;
+    font-weight: 500;
+    color: white;
+    background-color: #C88854;
+}
+
+.navbar-two {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: 1px white solid;
+    background-color: #1A3850;
+    padding: 0 20px;
+    height: 50px;
+}
+
+
+
+
+/** {
+    margin: 0px;
+    padding: 0px;
+    font-size: 1.2vw;
+}
+
+body {
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+    a:hover {
+        color: #C88854;
+    }
+
+ul {
+    list-style-type: none;
+}
+
+em {
+    color: #C88854;
+}
+
+.navbar-one {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #1A3850;
+    padding: 0 20px;
+    margin: 0;
+    height: 70px;
+}
+
+.navbar-logo {
+    border: 2px solid #C88854;
+    padding: 5px;
+    font-size: larger;
+}
+
+    .navbar-logo a {
+        color: white;
+        font-weight: bold;
+    }
+
+        .navbar-logo a:hover {
+            color: white;
+        }
+
+.search {
+    display: flex;
+}
+
+.search-text {
+    border: 0px;
+    padding: 0 10px;
+    width: 35vw;
+    height: 35px;
+    outline: none;
+}
+
+.search-btn {
+    height: 35px;
+    width: 4vw;
+    border: 0px;
+    font-weight: 500;
+    color: white;
+    background-color: #C88854;
+}
+
+.navbar-two {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-top: 1px white solid;
+    background-color: #1A3850;
+    padding: 0 20px;
+    height: 50px;
+}
+*/

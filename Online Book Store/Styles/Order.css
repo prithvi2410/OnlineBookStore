@@ -1,0 +1,28 @@
+﻿.oreder-history-content {
+    margin: 3vw;
+}
+
+.order-detail-link {
+    color: #C88854;
+    text-decoration: underline
+}
+.order-status {
+    color: #157347;
+}
+table {
+    width: 60vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.thead {
+    background-color: #1A3850;
+    background-color: #157347;
+    color: white;
+}
+tr {
+    height:5vw;
+    text-align:center;
+}
+th {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:large;
+}

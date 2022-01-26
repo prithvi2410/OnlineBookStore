@@ -1,0 +1,19 @@
+﻿@model Online_Book_Store.Models.Book
+@{
+    ViewBag.Title = "BuySummary";
+    Layout = "~/Views/Shared/_BookStoreLayout.cshtml";
+}
+<link href="~/Styles/Product.css" rel="stylesheet" />
+<div class="main-product">
+    <div class="main-product-image">
+        <img src="@Url.Content(Model.ImagePath)" alt="image">
+    </div>
+    <div class="main-product-content">
+        <h2>@Model.Name</h2>
+        <p>By : @Model.Author</p>
+        <p>Category : @Model.Category</p>
+        <p><strong>Rs. @Model.Price</strong></p>
+        <h5 class="purchase-success-message">Book Purchased Successfully</h5>
+        <p class="Successfull-navigation"><a href="#">Click here to shop more</a></p>
+    </div>
+</div>

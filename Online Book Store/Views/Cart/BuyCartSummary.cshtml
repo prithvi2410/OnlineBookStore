@@ -1,0 +1,18 @@
+﻿@model IEnumerable<String>
+@{
+    ViewBag.Title = "BuyCartSummary";
+    Layout = "~/Views/Shared/_BookStoreLayout.cshtml";
+}
+
+<div class="alert alert-success col-md-8" role="alert" style="margin:5% 15%;">
+    <h5 style="text-align: center">@(Model.Count()) Book bought sucessfully!!</h5>
+    <p><strong>Book Details</strong></p>
+    <ol>
+        @foreach (string bookName in Model)
+        {
+            <li>@bookName</li>
+        }
+    </ol>
+    <p style="text-align: center">For more details please check <a href="@Url.Action("History","Order")" class="alert-link">Order history</a>.<br />Click here to <a href="@Url.Action("Home", "Shop")" class="alert-link">Buy more!!</a></p>
+</div>
+

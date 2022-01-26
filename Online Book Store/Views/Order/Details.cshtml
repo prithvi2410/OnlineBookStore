@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Online_Book_Store.Models.OrderItem>
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_BookStoreLayout.cshtml";
+}
+<link href="~/Styles/Home.css" rel="stylesheet" />
+<link href="~/Styles/OrderDetails.css" rel="stylesheet" />
+    <h2 class="order-details-heading">Order Details</h2>
+    <h5 class="order-details-heading">Order size : @Model.Count() book(s)</h5>
+    <div class="row">
+        @foreach (var product in Model)
+        {
+            <div class="content col-md-6">
+                <div class="image">
+                    <img src="@Url.Content(product.Book.ImagePath)" class="book-image">
+                </div>
+    
+                <div class="description">
+                    <h5>@product.BookName</h5>
+                    <p>By @product.Book.Author</p>
+                    <p>Category : @product.Book.Category</p>
+                    <p><strong>Rs. @product.Amount</strong></p>
+    
+                </div>
+            </div>
+        }
+    </div>

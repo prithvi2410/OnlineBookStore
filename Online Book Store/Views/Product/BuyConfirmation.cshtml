@@ -1,0 +1,24 @@
+﻿@model Online_Book_Store.Models.Book
+@{
+    ViewBag.Title = "BuyConfirmation";
+    Layout = "~/Views/Shared/_BookStoreLayout.cshtml";
+}
+
+<link href="~/Styles/Product.css" rel="stylesheet" />
+<h3 class="page-header-message">Please confirm your purchase</h3>
+<div class="main-product">
+    <div class="main-product-image">
+        <img src="@Url.Content(Model.ImagePath)" alt="image">
+    </div>
+    <div class="main-product-content">
+        <h2>@Model.Name</h2>
+        <p>By : @Model.Author</p>
+        <p>Category : @Model.Category</p>
+        <p><strong>Rs. @Model.Price</strong></p>
+        <form action="@Url.Action("Buy", "Product")">
+            <button type="submit" class="buy-btn btn " value="@Model.BookId" name="bookId">Confirm purchase</button>
+        </form>
+        
+    </div>
+</div>
+

@@ -1,0 +1,46 @@
+﻿.main-product {
+    padding: 2vw;
+    margin: 2vw 20vw;
+    width: 60vw;
+    height: 25vw;
+}
+
+.main-product-image {
+    float: left;
+    padding: 1vw;
+}
+
+.main-product-content {
+    float: left;
+    margin: 3vw;
+    padding: 1vw;
+}
+
+    .main-product-content p {
+        font-size: 1.3vw;
+    }
+
+.main-product-image img {
+    height: 25vw;
+    width: 17vw;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.purchase-success-message {
+    text-align: center;
+    color: #157347;
+    font-style: italic;
+}
+
+.Successfull-navigation {
+    text-align: center;
+}
+
+    .Successfull-navigation a {
+        color: #1A3850;
+    }
+.page-header-message {
+    margin:2vw;
+    text-align: center;
+    font-family:'Bookman Old Style';
+}
