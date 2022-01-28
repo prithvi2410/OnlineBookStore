@@ -1,0 +1,73 @@
+﻿@model Online_Book_Store.Models.Customer
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_BookStoreLayout.cshtml";
+}
+<link href="~/Styles/Profile.css" rel="stylesheet" />
+<div class="profile">
+    <div class="profile-aside">
+        <div class="profile-name-section">
+            <p class="profile-name-hello">Hello,</p>
+            <p class="profile-name">@Model.Name</p>
+            <hr>
+        </div>
+        <div class="profile-navigation">
+            <p><a href="#">Profile information</a></p>
+            <p><a href="#">Payment information</a></p>
+        </div>
+    </div>
+    <div class="profile-details">
+        <h5>Personal info</h5><hr>
+        <div class="personal-info">
+            <div class="profile-detail-pair">
+                <label class="profile-detail-label">Username</label>
+                <p class="profile-detail-value">@Model.Username</p>
+            </div>
+            <div class="profile-detail-pair">
+                <label class="profile-detail-label">Password</label>
+                <p class="profile-detail-value">@Model.Password</p>
+            </div>
+        </div>
+        <h5>Contact info</h5><hr>
+        <div class="contact-info">
+            <div class="profile-detail-pair">
+                <label class="profile-detail-label">Email</label>
+                <p class="profile-detail-value">@Model.Email</p>
+            </div>
+            <div class="profile-detail-pair">
+                <label class="profile-detail-label">Mobile Number</label>
+                <p class="profile-detail-value">@Model.MobileNumber</p>
+            </div>
+        </div>
+        <div class="profile-options">
+            <p><a href="/Profile/Edit" class="profile-edit">Edit your profile</a></p>
+            <p><a href="/Profile/Delete" class="profile-delete">Delete your profile</a></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+@*<h5 class="profile-detail-heading">Your Profile</h5>
+    <div class="profile">
+        <div class="profile-details">
+            <label class="profile-detail-label">Name</label>
+            <p class="profile-detail-value">@Model.Name</p>
+            <label class="profile-detail-label">Email</label>
+            <p class="profile-detail-value">@Model.Email</p>
+            <label class="profile-detail-label">Mobile Number</label>
+            <p class="profile-detail-value">@Model.MobileNumber</p>
+            <label class="profile-detail-label">Username</label>
+            <p class="profile-detail-value">@Model.Username</p>
+            <label class="profile-detail-label">Password</label>
+            <p class="profile-detail-value">@Model.Password</p>
+        </div>
+        <div class="profile-options">
+            <p><a href="/Profile/Edit" class="profile-edit">Edit your profile</a></p>
+            <p><a href="/Profile/Delete" class="profile-delete">Delete your profile</a></p>
+        </div>
+    </div>*@

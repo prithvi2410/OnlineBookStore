@@ -33,7 +33,7 @@
                     if (TempData["CurrentUserName"] != null)
                     {
                         <li class="navbar-one-item">
-                            <em>Hi, @TempData["CurrentUserName"]</em>
+                            <em><a href="/Profile/Details" class="username">Hi, @TempData["CurrentUserName"]</a></em>
                         </li>
                         <li class="navbar-one-item">
                             <a href="@Url.Action("Logout", "Account")">Logout</a>
@@ -42,7 +42,7 @@
                     else
                     {
                         <li class="navbar-one-item">
-                            <a href="@Url.Action("Login", "Account")">Seller's Hub</a>
+                            <a href="@Url.Action("Login", "Admin")">Seller's Hub</a>
                         </li>
                         <li class="navbar-one-item">
                             <a href="@Url.Action("Login", "Account")">Login</a>
