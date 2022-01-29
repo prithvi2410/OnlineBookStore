@@ -40,8 +40,9 @@ namespace Online_Book_Store.Controllers
         // GET: Customers/Create
         public ActionResult Create()
         {
-            ViewBag.UserId = new SelectList(db.Carts, "UserId", "UserId");
-            return View();
+            //ViewBag.UserId = new SelectList(db.Carts, "UserId", "UserId");
+            //Customer customer = new Customer();
+            return View(/*customer*/);
         }
 
         // POST: Customers/Create
@@ -53,12 +54,17 @@ namespace Online_Book_Store.Controllers
         {
             if (ModelState.IsValid)
             {
+                TempData.Keep();
                 db.Customers.Add(customer);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                db.Carts.Add(new Cart() { CartId = customer.UserId, UserId = db.Customers.ToList()[db.Customers.ToList().Count() - 1].UserId, CartSize = 0 });
+                db.SaveChanges();
+                TempData["CurrentUserId"] = customer.UserId;
+                TempData["CurrentUserName"] = customer.Name;
+                return RedirectToAction("Home","Shop");
             }
 
-            ViewBag.UserId = new SelectList(db.Carts, "UserId", "UserId", customer.UserId);
+            //ViewBag.UserId = new SelectList(db.Carts, "UserId", "UserId", customer.UserId);
             return View(customer);
         }
 
@@ -74,7 +80,7 @@ namespace Online_Book_Store.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.UserId = new SelectList(db.Carts, "UserId", "UserId", customer.UserId);
+            //ViewBag.UserId = new SelectList(db.Carts, "UserId", "UserId", customer.UserId);
             return View(customer);
         }
 

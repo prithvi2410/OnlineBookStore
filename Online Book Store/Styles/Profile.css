@@ -15,11 +15,11 @@ h5 {
 }
 
 .profile-aside {
-    padding: 3vw;
+    padding: 2vw;
     background-color: #1A3850;
     border: inherit;
     border-radius: 25px 0 0 25px;
-    width: 20vw;
+    width: 22vw;
 }
 
 .profile-name-section {
@@ -34,7 +34,7 @@ h5 {
 }
 
 .profile-navigation {
-    margin: 1vw;
+  
     margin-top: 5vw;
 }
 

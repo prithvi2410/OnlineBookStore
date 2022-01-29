@@ -1,0 +1,46 @@
+﻿@model Online_Book_Store.Models.Customer
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_BookStoreLayout.cshtml";
+}
+<link href="~/Styles/Create.css" rel="stylesheet" />
+<div class="content">
+    <div class="logo">
+        <h4>THE BOOK STORE</h4>
+        <h4>Looks like you're new here!</h4>
+        <p>Sign up with your email to get started</p>
+    </div>
+    <div class="sub-content">
+        <div class="login-form">
+            <form method="post" action="@Url.Action("Create", "Account")">
+                <div class="input-container">
+                    <input type="text" placeholder="Enter your name" id="Name" name="Name" value=@Model.Username><!---->
+                    <p class="error-message" id="name-error">@ViewBag.UserIdErrorMessage</p><!---->
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Enter your email id" id="Email" name="Email" value=@Model.Username><!---->
+                    <p class="error-message" id="email-error">@ViewBag.EmailIdErrorMessage</p>
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Enter your mobile number" id="MobileNumber" name="MobileNumber" value=@Model.Username><!---->
+                    <p class="error-message" id="mobile-number-error">@ViewBag.UserIdErrorMessage</p><!---->
+                </div>
+                <div class="input-container">
+                    <input type="text" placeholder="Enter your username" id="Username" name="Username" value=@Model.Username><!---->
+                    <p class="error-message" id="username-error">@ViewBag.UserIdErrorMessage</p><!---->
+                </div>
+                <div class="input-container">
+                    <input type="password" placeholder="Enter your password" id="Password" name="Password" value=@Model.Password>
+                    <p class="error-message" id="password-error">@ViewBag.PasswordErrorMessage</p>
+                </div>
+                <input type="submit" class="btn  submit-btn" id="submit" value="Create account">
+            </form>
+        </div>
+        <div class="create-link">
+            <p>Already have an account? <a href="@Url.Action("Login", "Account")">Login</a></p>
+        </div>
+
+    </div>
+</div>
+<script src="~/Scripts/Create.js" type="application/javascript"></script>
+

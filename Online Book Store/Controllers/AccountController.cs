@@ -1,4 +1,5 @@
 ﻿using Online_Book_Store.Models;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace Online_Book_Store.Controllers
@@ -51,6 +52,27 @@ namespace Online_Book_Store.Controllers
             return RedirectToAction("Home","Shop");
         }
 
-        //Create action method[get and post]
+        [HttpGet]
+        public ActionResult Create()
+        {
+            Customer customer = new Customer();
+            return View(customer);
+        }
+        [HttpPost]        
+        public ActionResult Create(Customer customer)
+        {
+            if (ModelState.IsValid)
+            {
+                TempData.Keep();
+                database.Customers.Add(customer);
+                database.SaveChanges();
+                database.Carts.Add(new Cart() { CartId = customer.UserId, UserId = database.Customers.ToList()[database.Customers.ToList().Count() - 1].UserId, CartSize = 0 });
+                database.SaveChanges();
+                TempData["CurrentUserId"] = customer.UserId;
+                TempData["CurrentUserName"] = customer.Name;
+                return RedirectToAction("Home", "Shop");
+            }
+            return View(customer);
+        }
     }
 }
