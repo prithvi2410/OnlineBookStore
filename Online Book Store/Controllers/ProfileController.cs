@@ -22,5 +22,18 @@ namespace Online_Book_Store.Controllers
             Customer customer = database.Customers.Find((int)TempData["CurrentUserId"]);
             return View(customer);
         }
+
+        [HttpGet]
+        public ActionResult Edit()
+        {
+            if (TempData["CurrentUserId"] == null)
+            {
+                return RedirectToAction("Login", "Account");
+            }
+            TempData.Keep();
+            Customer customer = database.Customers.Find((int)TempData["CurrentUserId"]);
+            //ViewBag.UserId = new SelectList(db.Carts, "UserId", "UserId", customer.UserId);
+            return View(customer);
+        }
     }
 }
