@@ -82,7 +82,10 @@ document.getElementById('submit').addEventListener('click', validateUsername);
 document.getElementById('submit').addEventListener('click', validatePassword);
 
 
-
+if (document.getElementsByClassName("field-validation-error").length != 0) {    
+    document.getElementById('email-error').style.margin = 0;
+    document.getElementById('username-error').style.margin = 0;
+}
 
 
 

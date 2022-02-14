@@ -14,20 +14,23 @@
         <div class="login-form">
             <form method="post" action="@Url.Action("Create", "Account")">
                 <div class="input-container">
-                    <input type="text" placeholder="Enter your name" id="Name" name="Name" value=@Model.Username><!---->
+                    <input type="text" placeholder="Enter your name" id="Name" name="Name" value=@Model.Name><!---->
                     <p class="error-message" id="name-error">@ViewBag.UserIdErrorMessage</p><!---->
                 </div>
                 <div class="input-container">
-                    <input type="text" placeholder="Enter your email id" id="Email" name="Email" value=@Model.Username><!---->
+                    <input type="text" placeholder="Enter your email id" id="Email" name="Email" value=@Model.Email><!---->
                     <p class="error-message" id="email-error">@ViewBag.EmailIdErrorMessage</p>
+                    <p>@Html.ValidationMessageFor(m => m.Email)</p>
+
                 </div>
                 <div class="input-container">
-                    <input type="text" placeholder="Enter your mobile number" id="MobileNumber" name="MobileNumber" value=@Model.Username><!---->
+                    <input type="text" placeholder="Enter your mobile number" id="MobileNumber" name="MobileNumber" value=@Model.MobileNumber><!---->
                     <p class="error-message" id="mobile-number-error">@ViewBag.UserIdErrorMessage</p><!---->
                 </div>
                 <div class="input-container">
                     <input type="text" placeholder="Enter your username" id="Username" name="Username" value=@Model.Username><!---->
                     <p class="error-message" id="username-error">@ViewBag.UserIdErrorMessage</p><!---->
+                    <p>@Html.ValidationMessageFor(m => m.Username)</p>
                 </div>
                 <div class="input-container">
                     <input type="password" placeholder="Enter your password" id="Password" name="Password" value=@Model.Password>

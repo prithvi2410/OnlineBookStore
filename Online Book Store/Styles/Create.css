@@ -81,3 +81,7 @@ input {
 .input-container {
     height: 4vw;
 }
+.field-validation-error {
+    color: red;
+    font-size:1vw;
+}
